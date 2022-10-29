@@ -6,7 +6,14 @@
             <h2>学生信息</h2>
             <ul>
                 <li v-for="stu in studentInfo">
-                    {{stu}}
+                    <span>身份证号码：{{stu.id}}</span>
+                    <br>
+                    <span>姓名：{{stu.name}}</span>
+                    <br>
+                    <span>年龄：{{stu.age}}</span>
+                    <br>
+                    <span>性别：{{stu.sex}}</span>
+                    <hr/>
                 </li>
             </ul>
         </span>
@@ -25,7 +32,7 @@ export default {
         }
     },
     mounted() {
-        emitter.on('mittInfo',(data)=>{
+        emitter.on('mittInfo', (data) => {
             this.studentInfo = data
         })
     }
