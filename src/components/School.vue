@@ -35,7 +35,10 @@ export default {
         emitter.on('mittInfo', (data) => {
             this.studentInfo = data
         })
-    }
+    },
+    beforeDestroy() {
+        emitter.off('mittInfo')
+    },
 }
 </script>
 
